@@ -1,0 +1,8 @@
+<template>
+    <template if:false={isNewTrade}>
+        <c-exchange-list-view onchangeview={changeView}></c-exchange-list-view>
+    </template>
+    <template if:true={isNewTrade}>
+        <c-exchange-new-trade onchangeview={changeView}></c-exchange-new-trade>
+    </template>
+</template>

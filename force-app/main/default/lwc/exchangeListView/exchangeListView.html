@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Booked Trades">
+        <div if:true={isLoading}>
+            <lightning-spinner variant="brand" alternative-text="Loading...">
+            </lightning-spinner>
+        </div>
+        <lightning-button label="New Trade" slot="actions" onclick={changeView}></lightning-button>
+        <div class="slds-p-horizontal_xx-small slds-m-vertical_xx-small" style="height: 500px;">
+            <lightning-datatable key-field="Name"
+                    data={trades}
+                    columns={columns}
+                    enable-infinite-loading
+                    onloadmore={loadMoreData}
+                    hide-checkbox-column="true">
+            </lightning-datatable> 
+        </div>
+    </lightning-card>
+</template>

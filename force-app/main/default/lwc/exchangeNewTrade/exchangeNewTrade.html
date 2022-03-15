@@ -1,0 +1,49 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap slds-align_absolute-center slds-m-bottom_large">
+            <div class="slds-size_5-of-12 slds-box">
+                <div if:true={isLoading}>
+                    <lightning-spinner variant="brand" alternative-text="Loading...">
+                    </lightning-spinner>
+                </div>
+                <lightning-card title="New Trade">
+                <lightning-record-edit-form object-api-name="Trade__c" onsuccess={handleSuccess}>
+                    <lightning-layout class="slds-align_absolute-center">
+                        <lightning-layout-item size="4">
+                            <lightning-input-field field-name="Sell_Currency__c" onchange={handleChange} value={sellCurrency}> </lightning-input-field>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="4" class="slds-align_absolute-center">
+                            <lightning-icon class="slds-p-top_medium" icon-name="utility:right"></lightning-icon>
+                            <lightning-input-field class="slds-align_absolute-center" field-name="Rate__c" disabled value={rate}></lightning-input-field>
+                            <lightning-icon class="slds-p-top_medium" icon-name="utility:right"></lightning-icon>
+                        </lightning-layout-item>
+                            <lightning-layout-item size="4">
+                        <lightning-input-field field-name="Buy_Currency__c" onchange={handleChange} value={buyCurrency}></lightning-input-field>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout class="slds-align_absolute-center">
+                        <lightning-layout-item size="4">
+                            <lightning-input-field field-name="Sell_Amount__c" onchange={handleChange} value={sellAmount}> </lightning-input-field>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="4">
+                        </lightning-layout-item>
+                            <lightning-layout-item size="4">
+                        <lightning-input-field field-name="Buy_Amount__c" onchange={handleChange} disabled value={buyAmount}></lightning-input-field>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item class="slds-clearfix" size="4">
+                            <lightning-button class="slds-m-top_medium slds-p-horizontal_xx-small slds-float_left" variant="brand" label="Create" onclick={saveTrade}></lightning-button>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="4">
+                        </lightning-layout-item>
+                        <lightning-layout-item class="slds-clearfix" size="4">
+                            <lightning-button class="slds-m-top_medium slds-p-horizontal_xx-small slds-float_right" label="Cancel" onclick={changeView}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-record-edit-form>
+            </lightning-card>
+            </div>
+        </div> 
+    </lightning-card>
+</template>
