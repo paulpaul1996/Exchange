@@ -1,0 +1,9 @@
+List<Trade__c> tradeList = new List<Trade__c>();
+for(Integer i = 0; i < 35; i++) {
+    tradeList.add(new Trade__c(Buy_Currency__c='USD', Buy_Amount__c=100, Sell_Currency__c='EUR', Sell_Amount__c=89, Rate__c = 1.09, Date_Booked__c = Datetime.now()));
+}
+
+insert tradeList;
+
+CollaborationGroup tradeReviewersGroup = new CollaborationGroup(Name='Trade Reviewers', CollaborationType='Public');
+insert tradeReviewersGroup;
