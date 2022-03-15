@@ -8,4 +8,4 @@ insert tradeList;
 CollaborationGroup tradeReviewersGroup = new CollaborationGroup(Name='Trade Reviewers', CollaborationType='Public');
 insert tradeReviewersGroup;
 
-insert new ApiAccessKey__c(Value__c='85effdf5519e2176f8187bb3f3026bed');
+insert new ApiAccessKey__c(Value__c='3adda8e0c1fbfc411559bd371ea66b4a');

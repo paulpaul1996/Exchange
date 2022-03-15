@@ -40,6 +40,9 @@ export default class ExchangeNewTrade extends LightningElement {
                 this.buyAmount = this.sellAmount * this.rate;
                 this.isLoading = false;
             })
+            .catch(error => {
+                this.showToast('Error', error.body.message, 'error');
+            })
         }
     }
 
